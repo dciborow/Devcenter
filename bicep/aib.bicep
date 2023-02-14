@@ -84,6 +84,9 @@ var imageBuildName = '${imageName}_${newguid}_Build'
 @description('A unique string generated for each deployment, to make sure the script is always run.')
 param newguid string = newGuid()
 
+@description('Install Anaconda in Image')
+param installAnaconda bool = true
+
 resource templateIdentity 'Microsoft.ManagedIdentity/userAssignedIdentities@2022-01-31-preview' = {
   name: 'id-${nameseed}'
   location: location
@@ -213,6 +216,11 @@ resource imageTemplate 'Microsoft.VirtualMachineImages/imageTemplates@2022-02-14
           'choco install -y vscode'
         ]
       }
+      installAnaconda ? {
+        type: 'PowerShell'
+        name: 'Install Anaconda'
+        inline: loadTextContent('../imageBuilderScripts/install-conda.ps1')
+      } : {}
       // {
       //   type: 'PowerShell'
       //   name: 'AzureWindowsBaseline'
