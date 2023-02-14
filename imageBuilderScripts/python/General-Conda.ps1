@@ -1,10 +1,10 @@
 $Error.Clear()
 
-# environment_vars = [
-#            "install_log_file=${var.install_log_file}",
-#            "dlink_conda=${var.dlink_conda}",
-#            "conda_install_destination=${var.conda_install_destination}"
-# ]
+environment_vars = [
+           "install_log_file=C:\\Users\\Public\\Desktop\\INSTALLED_SOFTWARE.txt",
+           "dlink_conda=https://repo.anaconda.com/miniconda/Miniconda3-latest-Windows-x86_64.exe",
+           "conda_install_destination=C:\\miniconda3"
+]
 
 function DownloadFile {
     param ([string] $url, [string] $localFile, [bool] $suppressOutput=$false)
