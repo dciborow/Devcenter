@@ -216,11 +216,21 @@ resource imageTemplate 'Microsoft.VirtualMachineImages/imageTemplates@2022-02-14
           'choco install -y vscode'
         ]
       }
+      {
+        type: 'PowerShell'
+        name: 'Choco Installs'
+        inline: loadTextContent('../imageBuilderScripts/choco-azure.ps1')
+      }
       installAnaconda ? {
         type: 'PowerShell'
         name: 'Install Anaconda'
         inline: loadTextContent('../imageBuilderScripts/install-conda.ps1')
       } : {}
+      {
+        type: 'PowerShell'
+        name: 'Clone Repos'
+        inline: loadTextContent('../imageBuilderScripts/git-clone.ps1')
+      }
       // {
       //   type: 'PowerShell'
       //   name: 'AzureWindowsBaseline'
