@@ -2,7 +2,7 @@ param location string
 param repos array = []
 param choco array = []
 
-@allowed(["en-us", "en-gb", "zh-cn", "es-es"] )
+@allowed(["en-us", "en-gb", "zh-cn", "es-es"])
 param language string
 
 module setSystemLanguage 'tasks/setSystemLanguage.bicep' = {
