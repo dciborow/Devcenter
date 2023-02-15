@@ -18,7 +18,7 @@ module devdeploy 'bicep/common.bicep' = {
     location: location
     repos: repos
     choco: choco
-    tasks [
+    tasks: [
       setSystemLanguage.outputs.task
     ]
   }
