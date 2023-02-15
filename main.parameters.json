@@ -9,6 +9,15 @@
         "https://github.com/microsoft/az-partner-center-cli",
         "https://github.com/microsoft/pytest-azure"
       ]
-    }
+    },
+    "choco": {
+      "value": [
+        "7zip",
+        "azure-cli",
+        "git",
+        "github-desktop",
+        "github-desktop"
+      ]
+    }    
   }
 }
