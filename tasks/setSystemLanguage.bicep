@@ -2,9 +2,14 @@
 @allowed(["en-us", "en-gb", "zh-cn", "es-es"])
 param language string
 
-output task object = {
-  name: 'Set the Windows OS language'
-  description: 'Sets the language used by the Windows.'
-  type: powerShellCommand
-  powerShellCommand: 'Install-Language $language'
+module setSystemLanguage 'task.bicep' = {
+  name: '${deployment().name}-SetSystemLanguage'
+  params: {
+    name: 'Set the Windows OS language'
+    description: 'Sets the language used by the Windows.'
+    type: powerShellCommand
+    powerShellCommand: 'Install-Language $language'
+  }
 }
+
+output task object = setSystemLanguage.outputs.task
