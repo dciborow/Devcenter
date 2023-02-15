@@ -12,7 +12,7 @@ module setSystemLanguage 'tasks/setSystemLanguage.bicep' = {
   }
 }
 
-module devdeploy 'bicep/common.bicep' = {
+module devdeploy 'bicep/aib.bicep' = {
   name: '${deployment().name}-DevDeploy'
   params: {
     location: location
