@@ -1,0 +1,14 @@
+{
+  "id": "set-system-language",
+  "name": "Set the Windows OS language",
+  "description": "Sets the language used by the Windows.",
+  "parameters": {
+    "language": {
+      "type": "string",
+      "description": "The bcp47 tag of the language that you're installing",
+      "proposals": ["en-us", "en-gb", "zh-cn", "es-es"],
+      "required": true
+    }
+  }
+  "powerShellCommand": "Install-Language $language"
+}
