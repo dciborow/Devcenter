@@ -1,16 +1,17 @@
 param name string
 param description string
+param inline array = []
 
-@allowed(['powerShellCommand', 'powerShellScript'])
-param taskType string
-
-param powerShellCommand string = ''
-param powerShellScript string = ''
+module setSystemLanguage 'ImageTemplateCustomizer.bicep' = {
+  name: '${deployment().name}-ImageTask'
+  params: {
+    imageTemplateCustomizerType: 'Powershell'
+    inline: inline
+  }
+}
 
 output task object = {
   name: name
   description: description
-  type: type
-  powerShellCommand: taskType == 'powerShellCommand' ? powerShellCommand : null
-  powerShellScript: taskType == 'powerShellScript' ? loadFromTextFile(powerShellScript) : null
+  imageTemplateCustomizer: setSystemLanguage.outputs.imageTemplateCustomizer
 }
