@@ -1,0 +1,14 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "repos": {
+      "value": [
+        "https://github.com/microsoft/unreal-cloud-on-azure",
+        "https://github.com/microsoft/python-package-template",
+        "https://github.com/microsoft/az-partner-center-cli",
+        "https://github.com/microsoft/pytest-azure"
+      ]
+    }
+  }
+}
