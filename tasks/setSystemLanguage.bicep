@@ -1,5 +1,5 @@
 @description('The bcp47 tag of the installed language')
-@allowed(["en-us", "en-gb", "zh-cn", "es-es"])
+@allowed(['en-us', 'en-gb', 'zh-cn', 'es-es'])
 param language string
 
 module setSystemLanguage 'task.bicep' = {
