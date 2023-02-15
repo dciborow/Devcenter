@@ -7,7 +7,7 @@ module setSystemLanguage 'task.bicep' = {
   params: {
     name: 'Set the Windows OS language'
     description: 'Sets the language used by the Windows.'
-    type: powerShellCommand
+    type: 'powerShellCommand'
     powerShellCommand: 'Install-Language $language'
   }
 }
