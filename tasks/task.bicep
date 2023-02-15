@@ -3,7 +3,7 @@ param id string = uniqueString(name)
 param description string
 param inline array = []
 
-module setSystemLanguage 'ImageTemplateCustomizer.bicep' = {
+module imageTemplate 'ImageTemplateCustomizer.bicep' = {
   name: '${deployment().name}-ImageTask'
   params: {
     imageTemplateCustomizerType: 'Powershell'
@@ -15,5 +15,5 @@ output task object = {
   id: id
   name: name
   description: description
-  imageTemplateCustomizer: setSystemLanguage.outputs.imageTemplateCustomizer
+  imageTemplateCustomizer: imageTemplate.outputs.imageTemplateCustomizer
 }
